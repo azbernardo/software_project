@@ -11,7 +11,7 @@ class ToDoListApp:
         self.root = root
         self.root.title("To-Do List Management App")
 
-        # Dark theme colors
+        # Theme colors
         self.dark_background_color = "#CDE8E6"
         self.dark_foreground_color = "black"
 
@@ -19,7 +19,7 @@ class ToDoListApp:
         self.conn = sqlite3.connect("tasks.db")
         self.create_table()
 
-        # UI Components
+        # GUI Components
         self.root.configure(bg=self.dark_background_color)
 
         self.title_label = tk.Label(root, text="To-Do List", bg=self.dark_background_color, fg=self.dark_foreground_color)
@@ -51,7 +51,7 @@ class ToDoListApp:
         self.add_button.pack(pady=10)
 
 
-        # Set the style for Combobox and Treeview
+        
         self.style = ttk.Style()
         self.style.configure("Dark.TCombobox", background=self.dark_background_color, foreground=self.dark_foreground_color)
         self.style.configure("Dark.Treeview.Heading", background=self.dark_background_color, foreground=self.dark_foreground_color)
@@ -229,8 +229,8 @@ class ToDoListApp:
         self.conn.commit()
 
     def load_data(self):
-        # Load initial data or perform database connection here
-        # For simplicity, using static data
+        # Load initial data
+        
         self.insert_tasks([
             ("Task1", "Not Started", "2024-01-20"),
             ("Task2", "Completed", "2024-01-22"),
